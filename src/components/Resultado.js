@@ -1,17 +1,16 @@
-import React from "react";
+import * as React from "react";
+import { styled } from "@mui/material/styles";
 
-class Button extends Component {
-  render() {
-    return (
-      <div>
-        <div class="text-center">
-          <div id="finalAmount" class="text-center">
-            <span id="resultado"> </span>
-          </div>
-        </div>
-      </div>
-    );
-  }
+const Div = styled("div")(({ theme }) => ({
+  ...theme.typography.button,
+  backgroundColor: theme.palette.background.paper,
+  padding: theme.spacing(1),
+}));
+
+export default function TypographyTheme() {
+  return (
+    <Div style={{ display: "flex", justifyContent: "center" }}>
+      {"Resultadoaaa"}
+    </Div>
+  );
 }
-
-export default Button;

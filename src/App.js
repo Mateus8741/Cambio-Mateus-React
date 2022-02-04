@@ -1,10 +1,10 @@
-import css from "./css/style.css";
-
+import Selects from "./components/Selects";
 
 function App() {
   return (
     <div>
-      <h1>Hello World hehe</h1>
+      <h1>Hello World</h1>
+      <Selects />
     </div>
   );
 }

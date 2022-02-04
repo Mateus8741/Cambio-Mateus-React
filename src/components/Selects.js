@@ -1,53 +1,73 @@
-import React from "react";
+import * as React from "react";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import { Box } from "@mui/system";
+import Select from "@mui/material/Select";
+import Troca from "./Troca";
+import Input from "./Input";
+import Resultado from "./Resultado";
+import Header from "./Header";
 
-class Selects extends Component {
-  render() {
-    return (
-      <div>
-        <div class="row">
-          <div class="form-group">
-            <input
-              style="border: 1px solid rgb(221, 221, 221);;"
-              type="text"
-              class="form-control"
-              placeholder="Valor para conversão"
-              id="valor1"
-              onkeydown="calculate();"
-            />
-          </div>
-          <div class="col-sm-3">
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                {/* <span class="input-group-text"><img id="img1" src="https://flagcdn.com/48x36/br.png" alt="flag"></span> */}
-              </div>
-              <select class="form-control from" id="moeda1">
-                <option value="BRL">BRL</option>
-                <option value="USD">USD</option>
-                <option value="EUR">EUR</option>
-                <option value="GBP">GBP</option>
-              </select>
-            </div>
-          </div>
+export default function SelectVariants() {
+  const [age, setAge] = React.useState("");
 
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
 
-
-          <div class="col-sm-3">
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                {/* <span class="input-group-text" id="flag"><img id="img2" src="https://flagcdn.com/48x36/us.png" alt="flag"></span> */}
-              </div>
-              <select class="form-control to" id="moeda2">
-                <option value="USD">USD </option>
-                <option value="BRL">BRL</option>
-                <option value="EUR">EUR</option>
-                <option value="GBP">GBP</option>
-              </select>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <Header />
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { md: "row" },
+          alignItems: "center",
+          justifyContent: "center",
+          bgcolor: "background.paper",
+          overflow: "hidden",
+          borderRadius: "12px",
+          boxShadow: 1,
+          fontWeight: "bold",
+        }}
+      >
+        <Input/>
+        <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+          <InputLabel id="demo-simple-select-standard-label">De</InputLabel>
+          <Select
+            labelId="demo-simple-select-standard-label"
+            id="demo-simple-select-standard"
+            value={age}
+            onChange={handleChange}
+            label="Age"
+          >
+            <MenuItem value=""></MenuItem>
+            <MenuItem value={10}></MenuItem>
+            <MenuItem value={20}></MenuItem>
+            <MenuItem value={30}></MenuItem>
+            <MenuItem value={40}></MenuItem>
+          </Select>
+        </FormControl>
+        <Troca />
+        <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+          <InputLabel id="demo-simple-select-standard-label">Para</InputLabel>
+          <Select
+            labelId="demo-simple-select-standard-label"
+            id="demo-simple-select-standard"
+            value={age}
+            onChange={handleChange}
+            label="Age"
+          >
+            <MenuItem value=""></MenuItem>
+            <MenuItem value={10}></MenuItem>
+            <MenuItem value={20}></MenuItem>
+            <MenuItem value={30}></MenuItem>
+            <MenuItem value={40}></MenuItem>
+          </Select>
+        </FormControl>
+      </Box>
+      <Resultado />
+    </div>
+  );
 }
-
-export default Selects;
