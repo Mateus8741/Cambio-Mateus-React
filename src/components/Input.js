@@ -25,7 +25,7 @@ export default function BasicTextFields() {
           context.setValue(parseFloat(value));
         }}
         id="standard-basic"
-        label="Standard"
+        label="Valor para troca"
         variant="standard"
       />
     </Box>
