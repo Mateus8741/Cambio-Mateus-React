@@ -1,7 +1,13 @@
 import * as React from "react";
 import ChangeCircleIcon from "@mui/icons-material/ChangeCircle";
+import { SelectContext } from "../context/SelectContext";
 
 export default function SvgMaterialIcons() {
+  const context = React.useContext(SelectContext);
+  console.log(context);
+
+
+
   return (
     <ChangeCircleIcon
       sx={{ fontSize: 50 }}
