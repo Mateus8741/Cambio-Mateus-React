@@ -1,10 +1,10 @@
-import Selects from "./components/Selects";
+import Cambio from "./components/Cambio";
+import './App.css';
 
 function App() {
   return (
-    <div>
-      <h1>Hello World</h1>
-      <Selects />
+    <div className="back">
+      <Cambio className="cambio" />
     </div>
   );
 }
