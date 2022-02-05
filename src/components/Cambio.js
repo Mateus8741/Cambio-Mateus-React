@@ -7,14 +7,17 @@ import Selects from "./Selects";
 import '../App.css';
 
 export default function Cambio() {
+    
   return (
     <div>
       <Header />
+      <div className="div">
       <div className="box">
         <Input/>
         <Selects />
         <Troca />
         <Selects />
+      </div>
       <Resultado />
       </div>
     </div>

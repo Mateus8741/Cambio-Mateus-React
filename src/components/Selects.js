@@ -9,6 +9,7 @@ export default function SelectVariants() {
 
   const handleChange = (event) => {
     setAge(event.target.value);
+    console.log(age);
   };
 
   return (
@@ -22,11 +23,10 @@ export default function SelectVariants() {
             onChange={handleChange}
             label="Age"
           >
-            <MenuItem value=""></MenuItem>
-            <MenuItem value={10}></MenuItem>
-            <MenuItem value={20}></MenuItem>
-            <MenuItem value={30}></MenuItem>
-            <MenuItem value={40}></MenuItem>
+            <MenuItem value="BRL">BRL</MenuItem>
+            <MenuItem value="USD">USD</MenuItem>
+            <MenuItem value="EUR">EUR</MenuItem>
+            <MenuItem value="GBP">GBP</MenuItem>
           </Select>
         </FormControl>
     </div>

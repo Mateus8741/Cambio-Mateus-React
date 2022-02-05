@@ -1,8 +1,10 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
 export default function BasicTextFields() {
+  const [value, setValue] = useState("");
+
   return (
     <Box
       component="form"
@@ -12,7 +14,15 @@ export default function BasicTextFields() {
       noValidate
       autoComplete="off"
     >
-      <TextField id="standard-basic" label="Standard" variant="standard" />
+      <TextField
+        value={value}
+        onChange={({ target }) => {
+          setValue(target.value);
+        }}
+        id="standard-basic"
+        label="Standard"
+        variant="standard"
+      />
     </Box>
   );
 }
